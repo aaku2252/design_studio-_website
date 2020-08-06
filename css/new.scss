@@ -1,0 +1,302 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/utilities/position";
+@import "../node_modules/bootstrap/scss/utilities/flex";
+@import "../node_modules/bootstrap/scss/utilities/display";
+@import "../node_modules/bootstrap/scss/utilities/float";
+@import "../node_modules/bootstrap/scss/utilities/overflow";
+@import "../node_modules/bootstrap/scss/utilities/spacing";
+@import "../node_modules/bootstrap/scss/utilities/text";
+
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,400;1,300;1,400&family=Krona+One&family=Salsa&display=swap");
+
+$color-primary: #292929;
+$color-secondary: #b47970;
+$color-tertiary: #fff;
+
+$font-text: "Chivo", sans-serif;
+$font-main: "Krona One", sans-serif;
+$font-main-2: "Salsa", sans-serif;
+
+* {
+	text-rendering: optimizeLegibility;
+	box-sizing: border-box;
+
+	&::selection {
+		color: rgba($color-tertiary, 0.9);
+		background: rgba(lighten($color-primary, 20%), 0.4);
+	}
+}
+
+body {
+	background-color: $color-primary;
+	font-family: "Chivo", sans-serif;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	font-weight: 300;
+	position: relative;
+	color: $color-tertiary;
+}
+
+.video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $color-primary;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	opacity: 0.9;
+	z-index: -8;
+}
+
+.full_video {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	overflow: hidden;
+	z-index: -10;
+}
+
+.nav {
+	height: 95px;
+	margin: 0 auto;
+	width: 100%;
+	border-bottom: 1px solid $color-tertiary;
+	background: $color-primary;
+	opacity: 1;
+
+	&_logo {
+		&--img {
+			max-height: 40px;
+			width: auto;
+
+			&:hover {
+				animation: mover 0.6s ease-in-out;
+			}
+		}
+
+		@keyframes mover {
+			25% {
+				transform: rotate(10deg);
+			}
+
+			75% {
+				transform: rotate(-10deg);
+			}
+		}
+	}
+
+	&_list {
+		list-style: none;
+		color: $color-tertiary;
+	}
+
+	&_item {
+		margin-left: 12vw;
+		font-size: 14px;
+		letter-spacing: 1.6px;
+		font-stretch: 100%;
+		font-weight: 300;
+		text-decoration: none;
+		position: relative;
+
+		&:hover &--letters:nth-child(1) {
+			animation: texthovereffect 0.1s 1 forwards;
+		}
+
+		&:hover &--letters:nth-child(2) {
+			animation: texthovereffect 0.2s 1 forwards;
+		}
+
+		&:hover &--letters:nth-child(3) {
+			animation: texthovereffect 0.3s 1 forwards;
+		}
+
+		&:hover &--letters:nth-child(4) {
+			animation: texthovereffect 0.4s 1 forwards;
+		}
+
+		&:hover &--letters:nth-child(5) {
+			animation: texthovereffect 0.5s 1 forwards;
+		}
+
+		&:hover &--letters:nth-child(6) {
+			animation: texthovereffect 0.6s 1 forwards;
+		}
+
+		&:hover &--letters:nth-child(7) {
+			animation: texthovereffect 0.7s 1 forwards;
+		}
+	}
+
+	&_item::before {
+		content: "";
+		width: 100%;
+		height: 1px;
+		background-color: $color-primary;
+		opacity: 0.6;
+		position: absolute;
+		bottom: -1px;
+		z-index: 1;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	&_item::after {
+		content: "";
+		width: 3px;
+		height: 3px;
+		border-radius: 50%;
+		background-color: $color-tertiary;
+		position: absolute;
+		left: 50%;
+		bottom: -2px;
+		z-index: 2;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	&_item:hover::after,
+	&_item:hover::before {
+		opacity: 1;
+	}
+
+	@keyframes texthovereffect {
+		0% {
+			opacity: 0;
+		}
+
+		90% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+.moto {
+	margin: 4rem 0;
+}
+
+.moto-main img {
+	width: 10px;
+	height: 10px;
+}
+
+.moto-tag1 {
+	transform: translateX(-10px);
+	animation: tag1 0.5s forwards;
+}
+
+.moto-tag2 {
+	transform: translateX(-20px);
+	animation: tag2 1s forwards;
+}
+
+@keyframes tag1 {
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes tag2 {
+	to {
+		transform: translateX(0);
+	}
+}
+
+.moto-text {
+	font-size: 16px;
+	letter-spacing: 2.56px;
+	line-height: 20px;
+	font-weight: 300;
+	transform: translateX(-30px);
+	animation: tag1 1s forwards;
+}
+
+.heading {
+	font-family: $font-main;
+	font-size: 140px;
+	font-weight: 100;
+	letter-spacing: 1.6px;
+	line-height: 1;
+	padding: 0;
+	word-spacing: 0;
+
+	@media screen and (max-width: 480px) {
+		font-size: 50px;
+	}
+}
+
+.design,
+.development {
+	display: grid;
+	place-items: center;
+	font-family: "chivo";
+	font-size: 42px;
+	font-weight: 300;
+	letter-spacing: 4px;
+	color: $color-tertiary;
+
+	position: relative;
+
+	@media screen and (max-width: 480px) {
+		font-size: 26px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -20%;
+		width: 100%;
+		height: 2px;
+		background-color: rgba($color-tertiary, 0.2);
+	}
+}
+
+.and {
+	margin: 0 7vw;
+
+	@media screen and (max-width: 480px) {
+		margin: 0;
+	}
+}
+
+.digital {
+	margin-left: 30vw;
+}
+
+.textpath {
+	letter-spacing: 1px;
+	word-spacing: 8px;
+}
+
+.round-svg {
+	transition: all 5s;
+
+	&:hover {
+		transform: rotate(360deg);
+	}
+}
+
+.button-svg {
+	z-index: 2;
+	right: 0;
+	transition: all 3s;
+
+	&:hover + .round-svg {
+		transform: rotate(180deg);
+	}
+}
