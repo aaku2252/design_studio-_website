@@ -33,7 +33,7 @@ $font-main-2: "Salsa", sans-serif;
 }
 
 body {
-	background-color: $color-primary;
+	background: url(../images/star-1951963_1280.jpg);
 	font-family: "Chivo", sans-serif;
 	padding: 0;
 	margin: 0;
@@ -74,6 +74,7 @@ body {
 	border-bottom: 1px solid $color-tertiary;
 	background: $color-primary;
 	opacity: 1;
+	display: block;
 
 	&_logo {
 		&--img {
@@ -231,7 +232,7 @@ body {
 	font-size: 140px;
 	font-weight: 100;
 	letter-spacing: 1.6px;
-	line-height: 1;
+	line-height: 100%;
 	padding: 0;
 	word-spacing: 0;
 
@@ -248,6 +249,7 @@ body {
 	font-size: 42px;
 	font-weight: 300;
 	letter-spacing: 4px;
+	line-height: 100%;
 	color: $color-tertiary;
 
 	position: relative;
@@ -298,5 +300,58 @@ body {
 
 	&:hover + .round-svg {
 		transform: rotate(180deg);
+	}
+}
+.awards {
+	position: relative;
+	padding-left: 60vw;
+
+	&_box {
+		position: relative;
+		color: $color-tertiary;
+		line-height: 1;
+		padding: 0;
+		margin: 0;
+		width: auto;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -20%;
+			width: 100%;
+			height: 2px;
+			background-color: rgba($color-tertiary, 0.3);
+		}
+	}
+	&_text {
+		font-family: $font-text;
+		font-size: 16px;
+		letter-spacing: 4px;
+		line-height: 1.3;
+
+		font-weight: 300;
+	}
+}
+.info {
+	width: 52vw;
+	margin: 100px auto;
+	font-size: 22px;
+	font-weight: 100;
+	font-family: $font-text;
+	line-height: 38.5px;
+	opacity: 0.6;
+	transform: translateY(20%);
+	transition: all 3s;
+	&:hover {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	p {
+		margin: 0;
+		text-indent: 10%;
+	}
+	article p:first-child {
+		text-indent: 0;
+		font-size: 16px;
 	}
 }

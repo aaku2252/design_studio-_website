@@ -5231,7 +5231,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 body {
-  background-color: #292929;
+  background: url(../images/star-1951963_1280.jpg);
   font-family: "Chivo", sans-serif;
   padding: 0;
   margin: 0;
@@ -5272,6 +5272,7 @@ body {
   border-bottom: 1px solid #fff;
   background: #292929;
   opacity: 1;
+  display: block;
 }
 
 .nav_logo--img {
@@ -5485,7 +5486,7 @@ body {
   font-size: 140px;
   font-weight: 100;
   letter-spacing: 1.6px;
-  line-height: 1;
+  line-height: 100%;
   padding: 0;
   word-spacing: 0;
 }
@@ -5505,6 +5506,7 @@ body {
   font-size: 42px;
   font-weight: 300;
   letter-spacing: 4px;
+  line-height: 100%;
   color: #fff;
   position: relative;
 }
@@ -5569,4 +5571,68 @@ body {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.awards {
+  position: relative;
+  padding-left: 60vw;
+}
+
+.awards_box {
+  position: relative;
+  color: #fff;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+.awards_box::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.awards_text {
+  font-family: "Chivo", sans-serif;
+  font-size: 16px;
+  letter-spacing: 4px;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.info {
+  width: 52vw;
+  margin: 100px auto;
+  font-size: 22px;
+  font-weight: 100;
+  font-family: "Chivo", sans-serif;
+  line-height: 38.5px;
+  opacity: 0.6;
+  -webkit-transform: translateY(20%);
+      -ms-transform: translateY(20%);
+          transform: translateY(20%);
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+}
+
+.info:hover {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.info p {
+  margin: 0;
+  text-indent: 10%;
+}
+
+.info article p:first-child {
+  text-indent: 0;
+  font-size: 16px;
 }
